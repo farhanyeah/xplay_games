@@ -204,9 +204,9 @@
                         <select name="tipe_booking" id="tipeBookingSelect" required>
                             <option value="">Pilih Tipe Booking</option>
                             <option value="per_jam">Per Jam</option>
-                            <option value="happy_hour">Happy Hour (Sen–Jum)</option>
-                            <option value="paket_pagi">Paket Pagi</option>
-                            <option value="paket_malam">Paket Malam</option>
+                            <option value="happy_hour">Happy Hour - Paket 3 Jam (10:00 - 16:00)</option>
+                            <option value="paket_pagi">Paket Pagi - Paket 6 Jam (10:00 - 12:00)</option>
+                            <option value="paket_malam">Paket Malam - Paket 5 Jam (18:00 - 22:00)</option>
                         </select>
                         <span class="error-message" data-input="tipe_booking"></span>
                         @error('tipe_booking')
@@ -567,6 +567,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmBookingModal = document.getElementById('confirmBookingModal');
     const cancelBookingModalBtn = document.getElementById('cancelBookingModal');
 
+    // ===== FUNGSI CLOSE MODAL =====
+    function closeConfirmModal() {
+        confirmBookingModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
     // ===== FILTER ANTRIAN =====
     const filterHariIni = document.getElementById('filterHariIni');
     const filterSemua = document.getElementById('filterSemua');
@@ -766,23 +772,42 @@ if (tipeBookingSelect) {
             document.getElementById('confirmJamMulai').innerText = jamMulaiInput.value;
             document.getElementById('confirmJamSelesai').innerText = jamSelesaiInput.value;
             document.getElementById('confirmHarga').innerText = hargaDisplay.innerText;
-
             confirmBookingModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
     }
 
-    // ===== BATAL MODAL =====
-    if (cancelBookingModalBtn) {
-        cancelBookingModalBtn.addEventListener('click', function() {
-            confirmBookingModal.classList.remove('active');
+        // ===== BATAL MODAL =====
+        if (cancelBookingModalBtn) {
+            cancelBookingModalBtn.addEventListener('click', function() {
+                confirmBookingModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // ===== KLIK LUAR MODAL =====
+        confirmBookingModal.addEventListener('click', function(e) {
+            if (e.target === confirmBookingModal) {
+                confirmBookingModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         });
-    }
+
+        // ===== ESCAPE KEY =====
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && confirmBookingModal.classList.contains('active')) {
+                confirmBookingModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
 
     // ===== KONFIRMASI BOOKING (MIDTRANS) =====
     const confirmBookingSubmit = document.getElementById('confirmBookingSubmit');
     if (confirmBookingSubmit) {
         confirmBookingSubmit.addEventListener('click', function() {
             confirmBookingModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
             const formData = new FormData(bookingForm);
 
             fetch("{{ route('booking.store') }}", {

@@ -18,7 +18,7 @@ class BookingController extends Controller
 
         $perPage = 10;
 
-        // ===== ANTRIAN BOOKING (Semua yang booked, hari ini + depan) =====
+        // ===== ANTRIAN BOOKING =====
         $halamanAntrian = $request->filled('halaman_antrian') ? (int)$request->halaman_antrian : 1;
         
         $queryAntrian = Booking::with('unit.jenisUnit')
@@ -32,7 +32,7 @@ class BookingController extends Controller
         $offsetAntrian = ($halamanAntrian - 1) * $perPage;
         $antrianBooking = $queryAntrian->skip($offsetAntrian)->take($perPage)->get();
 
-        // ===== BOOKING SAYA (Customer yang login) =====
+        // ===== BOOKING SAYA =====
         $halaman = $request->filled('halaman') ? (int)$request->halaman : 1;
         
         $queryBooking = Booking::with('unit.jenisUnit', 'paket', 'paketKhusus')
@@ -47,7 +47,6 @@ class BookingController extends Controller
         $offset = ($halaman - 1) * $perPage;
         $bookingSaya = $queryBooking->skip($offset)->take($perPage)->get();
 
-        // Pendapatan hari ini
         $pendapatanHariIni = Booking::whereDate('created_at', today())
             ->where('payment_status', 'paid')
             ->sum('harga');
@@ -79,7 +78,7 @@ class BookingController extends Controller
             'tanggal'           => 'required|date|after_or_equal:today',
             'tipe_booking'      => 'required|in:per_jam,happy_hour,paket_pagi,paket_malam',
             'paket_id'          => 'required_if:tipe_booking,per_jam|nullable|exists:paket_harga_booking,id',
-            'paket_khusus_id'   => 'required_if:tipe_booking,happy_hour,paket_pagi,paket_malam|nullable|exists:paket_khusus_booking,id',
+            'paket_khusus_id'    => 'required_if:tipe_booking,happy_hour,paket_pagi,paket_malam|nullable|exists:paket_khusus_booking,id',
             'jam_mulai'         => 'required',
             'pembayaran'        => auth()->user()->role === 'customer' ? 'nullable|in:midtrans' : 'nullable|in:cash',
         ]);
@@ -104,60 +103,63 @@ class BookingController extends Controller
         $jamSelesai = $jamMulai->copy()->addHours($jumlahJam);
 
         // ========== CONFIG ==========
-        $CurrentJam = (int) now()->format('H');
-        $jamBuka = 10;
-        $jamTutup = 3;
+        $currentJam = (int) now()->format('H');
 
-        // ===== 1. CEK JAM OPERASIONAL =====
-        if ($CurrentJam >= 3 && $CurrentJam < 10) {
+        // ===== 1. CEK JAM OPERASIONAL (XPLAY TUTUP JAM 03:00-10:00) =====
+        if ($currentJam >= 3 && $currentJam < 10) {
             return response()->json(['errors' => ['jam_mulai' => ['Tidak bisa booking karena XPLAY sedang tutup (buka jam 10:00).']]], 422);
         }
 
-        // ===== 2. CEK JAM MULAI ======
+        // ===== 2. CEK JAM MULAI (TIDAK BOLEH YANG SUDAH LEWAT) =====
         if ($jamMulai->lt(now())) {
             return response()->json(['errors' => ['jam_mulai' => ['Tidak bisa booking untuk jam yang sudah lewat.']]], 422);
         }
 
         // ===== 3. VALIDASI PAKET KHUSUS ======
         if ($request->tipe_booking !== 'per_jam') {
-            $jamMulaiStr = $jamMulai->format('H:i');
             $jamMulaiInt = (int) $jamMulai->format('H');
+            $jamMulaiFull = $jamMulai->format('H:i');
+            $hariBooking = \Carbon\Carbon::parse($request->tanggal)->dayOfWeekIso; // 1=Senin, 7=Minggu
             
-            // Happy Hour Senin-Jumat
+            // ===== HAPPY HOUR: Senin-Jumat, jam 10:00-16:00 =====
             if ($request->tipe_booking === 'happy_hour') {
-                $hariIni = \Carbon\Carbon::parse($request->tanggal)->dayOfWeekIso;
-                $hariBerlaku = $paketKhusus->hari_berlaku;
-                
-                if (!in_array($hariIni, $hariBerlaku)) {
+                // Cek hari (Senin-Jumat = 1-5)
+                if ($hariBooking > 5) {
                     return response()->json(['errors' => ['tanggal' => ['Happy Hour hanya berlaku Senin-Jumat.']]], 422);
                 }
-            }
-            
-            // ===== PAKET PAGI: MAX MULAI JAM 13:00 =====
-            if ($request->tipe_booking === 'paket_pagi') {
-                if ($jamMulaiInt > 13) {
-                    return response()->json(['errors' => ['jam_mulai' => ['Paket Pagi hanya bisa dimulai maksimal jam 13:00.']]], 422);
+                // Cek jam mulai
+                if ($jamMulaiFull < '10:00' || $jamMulaiFull > '16:00') {
+                    return response()->json(['errors' => ['jam_mulai' => ['Happy Hour hanya bisa dimulai jam 10:00-16:00.']]], 422);
                 }
             }
             
-            // ===== PAKET MALAM: MAX MULAI JAM 22:00 =====
+            // ===== PAKET PAGI: jam 10:00-12:00 =====
+            if ($request->tipe_booking === 'paket_pagi') {
+                if ($jamMulaiFull < '10:00' || $jamMulaiFull >= '12:01') {
+                    return response()->json(['errors' => ['jam_mulai' => ['Paket Pagi hanya bisa dimulai jam 10:00-12:00.']]], 422);
+                }
+            }
+            
+            // ===== PAKET MALAM: jam 18:00-22:00 =====
             if ($request->tipe_booking === 'paket_malam') {
-                if ($jamMulaiInt > 22) {
-                    return response()->json(['errors' => ['jam_mulai' => ['Paket Malam hanya bisa dimulai maksimal jam 22:00.']]], 422);
+                if ($jamMulaiFull < '18:00' || $jamMulaiFull >= '22:01') {
+                    return response()->json(['errors' => ['jam_mulai' => ['Paket Malam hanya bisa dimulai jam 18:00-22:00.']]], 422);
                 }
             }
         }
 
-        // ===== 4. CEK JAM SELESAI (MAX 03:00) ======
-        if (!in_array($request->tipe_booking, ['paket_pagi', 'paket_malam'])) {
+        // ===== 4. CEK JAM SELESAI (MAX 03:00) - UNTUK PER JAM =====
+        if ($request->tipe_booking === 'per_jam') {
             $jamSelesaiHour = (int) $jamSelesai->format('H');
+            $jamSelesaiFull = $jamSelesai->format('H:i');
             
+            // Jika jam selesai lewat dari 03:00
             if ($jamSelesaiHour > 3 || ($jamSelesaiHour == 3 && $jamSelesai->minute > 0)) {
                 return response()->json(['errors' => ['jam_mulai' => ['Booking maksimal sampai jam 03:00.']]], 422);
             }
         }
         
-        // ===== 5. BENTROK ======
+        // ===== 5. CEK BENTROK / OVERLAP ======
         $bentrok = Booking::where('unit_id', $request->unit_id)
             ->whereDate('tanggal', $request->tanggal)
             ->whereIn('status_booking', ['pending', 'booked'])
@@ -170,7 +172,7 @@ class BookingController extends Controller
             return response()->json(['errors' => ['jam_mulai' => ['Unit sudah dibooking pada jam tersebut.']]], 422);
         }
         
-        // Simpan
+        // ===== 6. SIMPAN BOOKING =====
         $transactionCode = 'BOOKING-' . now()->format('ymd') . '-' . strtoupper(uniqid());
         $pembayaran = auth()->user()->role === 'customer' ? 'midtrans' : 'cash';
         

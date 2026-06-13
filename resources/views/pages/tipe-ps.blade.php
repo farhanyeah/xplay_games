@@ -34,13 +34,13 @@
             <div class="ps-card reveal">
 
                 <div class="ps-main-image">
-                    <img src="{{ asset('images/tipe_ps/ps4-main.jpg') }}" alt="PS 4 Reguler">
+                    <img src="{{ asset('images/tipe_ps/ps4-main.jpeg') }}" alt="PS 4 Reguler">
                 </div>
 
                 <div class="ps-thumbnails">
                     <img src="{{ asset('images/tipe_ps/ps4-1.jpg') }}" alt="PS 4 Reguler - Tampilan 1">
                     <img src="{{ asset('images/tipe_ps/ps4-2.jpg') }}" alt="PS 4 Reguler - Tampilan 2">
-                    <img src="{{ asset('images/tipe_ps/ps4-3.jpg') }}" alt="PS 4 Reguler - Tampilan 3">
+                    <img src="{{ asset('images/tipe_ps/ps4-3.jpeg') }}" alt="PS 4 Reguler - Tampilan 3">
                 </div>
 
                 <div class="ps-content">
@@ -59,13 +59,13 @@
             <div class="ps-card reveal">
 
                 <div class="ps-main-image">
-                    <img src="{{ asset('images/ps4pro-main.jpg') }}" alt="PS 4 Pro">
+                    <img src="{{ asset('images/tipe_ps/ps4pro-main.jpeg') }}" alt="PS 4 Pro">
                 </div>
 
                 <div class="ps-thumbnails">
-                    <img src="{{ asset('images/ps4pro-1.jpg') }}" alt="PS 4 Pro - Tampilan 1">
-                    <img src="{{ asset('images/ps4pro-2.jpg') }}" alt="PS 4 Pro - Tampilan 2">
-                    <img src="{{ asset('images/ps4pro-3.jpg') }}" alt="PS 4 Pro - Tampilan 3">
+                    <img src="{{ asset('images/tipe_ps/ps4pro-1.jpeg') }}" alt="PS 4 Pro - Tampilan 1">
+                    <img src="{{ asset('images/tipe_ps/ps4pro-2.jpeg') }}" alt="PS 4 Pro - Tampilan 2">
+                    <img src="{{ asset('images/tipe_ps/ps4pro-3.jpeg') }}" alt="PS 4 Pro - Tampilan 3">
                 </div>
 
                 <div class="ps-content">
@@ -84,13 +84,13 @@
             <div class="ps-card reveal">
 
                 <div class="ps-main-image">
-                    <img src="{{ asset('images/ps5-main.jpg') }}" alt="PS 5 Reguler">
+                    <img src="{{ asset('images/tipe_ps/ps5-main.jpeg') }}" alt="PS 5 Reguler">
                 </div>
 
                 <div class="ps-thumbnails">
                     <img src="{{ asset('images/tipe_ps/ps5-1.jpg') }}" alt="PS 5 Reguler - Tampilan 1">
-                    <img src="{{ asset('images/ps5-2.jpg') }}" alt="PS 5 Reguler - Tampilan 2">
-                    <img src="{{ asset('images/ps5-3.jpg') }}" alt="PS 5 Reguler - Tampilan 3">
+                    <img src="{{ asset('images/tipe_ps/ps5-2.jpeg') }}" alt="PS 5 Reguler - Tampilan 2">
+                    <img src="{{ asset('images/tipe_ps/ps5-3.jpeg') }}" alt="PS 5 Reguler - Tampilan 3">
                 </div>
 
                 <div class="ps-content">
@@ -109,7 +109,7 @@
             <div class="ps-card reveal">
 
                 <div class="ps-main-image">
-                    <img src="{{ asset('images/tipe_ps/ps5vvip-main.jpg') }}" alt="PS 5 VIP">
+                    <img src="{{ asset('images/tipe_ps/ps5vip-main.jpeg') }}" alt="PS 5 VIP">
                 </div>
 
                 <div class="ps-thumbnails">
@@ -140,7 +140,7 @@
 
                 <div class="ps-thumbnails">
                     <img src="{{ asset('images/tipe_ps/ps5vvip-1.jpg') }}" alt="PS 5 VVIP - Tampilan 1">
-                    <img src="{{ asset('images/tipe_ps/ps5vvip-2.jpg') }}" alt="PS 5 VVIP - Tampilan 2">
+                    <img src="{{ asset('images/tipe_ps/ps5vvip-2.jpeg') }}" alt="PS 5 VVIP - Tampilan 2">
                     <img src="{{ asset('images/tipe_ps/ps5vvip-3.jpg') }}" alt="PS 5 VVIP - Tampilan 3">
                 </div>
 
