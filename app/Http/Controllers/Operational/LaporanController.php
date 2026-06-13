@@ -9,7 +9,8 @@ use App\Models\Billing;
 use App\Models\Sewa;
 use App\Models\Booking;
 use App\Models\Penjualan;
-use Barryvdh\DomPDF\Facade\PDF;
+// use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -158,11 +159,10 @@ class LaporanController extends Controller
             ->where('tanggal', $tanggal)
             ->firstOrFail();
 
-        $pdf = PDF::loadView('operational.laporan.laporan-pdf', compact('laporan'));
+        $pdf = Pdf::loadView('operational.laporan.laporan-pdf', compact('laporan'));
         
         return $pdf->download('Laporan-XPLAY-' . $tanggal . '.pdf');
     }
-
     public function riwayat(Request $request)
     {
         $query = Laporan::with('createdBy')
