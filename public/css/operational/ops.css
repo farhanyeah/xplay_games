@@ -1,0 +1,814 @@
+/* ===========================================
+   ops.css — XPLAY Games
+   Design System untuk halaman Operational
+   Gunakan class ops-* di semua halaman
+=========================================== */
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.ops-page-title {
+    color: #1e293b;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.ops-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ops-card-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-bottom: 2px solid #6366f1;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.ops-header-icon {
+    color: #818cf8;
+}
+
+.ops-header-title {
+    color: #f8fafc;
+    font-size: 14px;
+}
+
+/* Card body gelap — dipakai di area filter */
+.ops-card-body {
+    background: #1e293b;
+    padding: 20px;
+}
+
+/* Card body putih — dipakai di show/detail page */
+.ops-show-card-body {
+    background: #ffffff;
+    padding: 24px;
+}
+
+.ops-badge-total {
+    background: #6366f1;
+    color: white;
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   FILTER
+========================================= */
+
+.ops-filter-label {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.ops-input {
+    background: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+    border-radius: 8px !important;
+    font-size: 13px;
+    height: 38px;
+}
+
+.ops-input::placeholder {
+    color: #475569 !important;
+}
+
+.ops-input:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+    outline: none;
+}
+
+.ops-input option {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.ops-input-prefix {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #94a3b8;
+    border-right: none;
+    font-size: 13px;
+}
+
+.ops-btn-filter {
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.ops-btn-filter:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+.ops-btn-reset {
+    background: #334155;
+    color: #cbd5e1;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.ops-btn-reset:hover {
+    background: #475569;
+    color: #f8fafc;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.ops-table thead tr {
+    background: #f1f5f9;
+}
+
+.ops-table thead th {
+    padding: 14px 16px;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 700;
+    border-bottom: 2px solid #e2e8f0;
+    border-top: none;
+    white-space: nowrap;
+}
+
+.ops-table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.15s;
+}
+
+.ops-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.ops-table tbody td {
+    padding: 14px 16px;
+    vertical-align: middle;
+    border-top: none;
+}
+
+
+/* =========================================
+   TABLE CONTENT
+========================================= */
+
+.ops-text-muted-sm {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ops-date-text {
+    font-size: 11px;
+    color: #475569;
+    white-space: nowrap;
+}
+
+.ops-harga-text {
+    font-weight: 700;
+    color: #059669;
+    font-size: 12px;
+}
+
+.ops-harga-pengeluaran {
+    font-weight: 700;
+    color: #dc2626;
+    font-size: 12px;
+}
+
+.ops-harga-tutupkas {
+    font-weight: 700;
+    color: #2563eb;
+    font-size: 12px;
+}
+
+/* =========================================
+   STATUS BADGE
+========================================= */
+
+.ops-status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   AKSI BUTTON
+========================================= */
+
+.ops-aksi-group {
+    display: flex;
+    gap: 6px;
+}
+
+.ops-btn-aksi {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.ops-btn-aksi:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.ops-btn-aksi-full {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ops-btn-aksi-full:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.ops-btn-back {
+    background: #334155;
+    color: #cbd5e1;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.ops-btn-back:hover {
+    background: #475569;
+    color: #f8fafc;
+    text-decoration: none;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.ops-empty-state {
+    text-align: center;
+    padding: 48px 16px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.ops-pagination {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 12px 20px;
+}
+
+.ops-pagination .pagination {
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.ops-pagination .page-link {
+    border-radius: 6px !important;
+    margin: 0 2px;
+    border: 1px solid #e2e8f0;
+    color: #6366f1;
+    font-size: 13px;
+}
+
+.ops-pagination .page-item.active .page-link {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: white;
+}
+
+.ops-pagination .page-link:hover {
+    background: #ede9fe;
+    color: #6366f1;
+    border-color: #c7d2fe;
+}
+
+
+/* =========================================
+   SHOW / DETAIL PAGE — INFO TABLE
+========================================= */
+
+.ops-info-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #6366f1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.ops-info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ops-info-table tr {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.ops-info-table tr:last-child {
+    border-bottom: none;
+}
+
+.ops-info-table td {
+    padding: 10px 0;
+    font-size: 13px;
+    vertical-align: top;
+}
+
+.ops-info-label {
+    color: #94a3b8;
+    width: 140px;
+    font-weight: 500;
+    padding-right: 12px;
+}
+
+.ops-info-value {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.ops-info-sub {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/* Status Badges */
+.ops-status-badge.status-pending { background: #fef3c7; color: #d97706; }
+.ops-status-badge.status-disewa { background: #dbeafe; color: #2563eb; }
+.ops-status-badge.status-extended { background: #ede9fe; color: #7c3aed; }
+.ops-status-badge.status-completed { background: #dcfce7; color: #16a34a; }
+.ops-status-badge.status-cancelled { background: #fee2e2; color: #dc2626; }
+
+/* Nama Petugas di tabel */
+.ops-table-username {
+    font-weight: 600;
+    font-size: 12px;
+    color: #1e293b;
+}
+
+/* Alasan di tabel */
+.ops-table-alasan {
+    font-weight: 600;
+    font-size: 12px;
+    color: #1e293b;
+}
+
+/* Table Item Name - untuk nama item di tabel */
+.ops-table-item-name {
+    font-weight: 500;
+    font-size: 12px;
+    color: #1e293b;
+}
+
+/* Button Tambah untuk Owner */
+.ops-btn-aksi-full.btn-tambah {
+    background: #6366f1;
+    color: white;
+}
+
+.ops-btn-aksi-full.btn-tambah:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+/* Button Tambah Item Owner */
+.ops-btn-tambah {
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.ops-btn-tambah:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+/* Table Shift - untuk shift di tabel */
+.ops-table-shift {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* =========================================
+   MODAL - STANDAR
+========================================= */
+
+.ops-modal .modal-dialog {
+    max-width: 480px;
+    margin: 1.75rem auto;
+}
+
+.ops-modal .modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.ops-modal .modal-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-bottom: 2px solid #6366f1;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ops-modal .modal-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ops-modal .modal-header .close {
+    color: #94a3b8;
+    padding: 0;
+    margin: 0;
+}
+
+.ops-modal .modal-header .close:hover {
+    color: #f8fafc;
+}
+
+.ops-modal .modal-body {
+    background: #1e293b;
+    padding: 20px;
+}
+
+.ops-modal .modal-footer {
+    background: #0f172a;
+    border-top: 1px solid #334155;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Form dalam Modal */
+.ops-modal .form-group {
+    margin-bottom: 16px;
+}
+
+.ops-modal .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.ops-modal .ops-filter-label {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.ops-modal .ops-input {
+    width: 100%;
+}
+
+.ops-modal .text-danger {
+    color: #f87171;
+}
+
+/* Status Booking */
+.ops-status-badge.status-booked { background: #dbeafe; color: #2563eb; }
+.ops-status-badge.status-done   { background: #dcfce7; color: #16a34a; }
+
+/* Tipe Booking Badge */
+.booking-tipe-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tipe-perjam  { background: #e0f2fe; color: #0369a1; }
+.tipe-khusus  { background: #fef9c3; color: #854d0e; }
+
+/* Transaction Code Booking */
+.booking-transaction-code {
+    font-weight: 700;
+    color: #6366f1;
+    font-size: 11px;
+}
+
+/* =========================================
+   TABLE CONTENT — GENERIC
+========================================= */
+
+.ops-transaction-code {
+    font-weight: 700;
+    color: #6366f1;
+    font-size: 11px;
+}
+
+.ops-customer-name {
+    font-weight: 600;
+    font-size: 11px;
+    color: #1e293b;
+}
+
+.ops-customer-phone {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.ops-unit-code {
+    font-weight: 600;
+    font-size: 11px;
+    color: #1e293b;
+}
+
+.ops-unit-type {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+
+
+/* =========================================
+   AKSI BUTTON COLORS — GENERIC
+========================================= */
+
+.ops-btn-aksi.btn-detail {
+    background: #6366f1;
+    color: white;
+}
+
+.ops-btn-aksi.btn-hapus {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.ops-btn-aksi.btn-complete {
+    background: #22c55e;
+    color: white;
+}
+
+/* =========================================
+   SHOW PAGE — PAYMENT BOX
+========================================= */
+
+.ops-payment-desc {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.ops-payment-amount-box {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.ops-payment-amount-label {
+    margin-bottom: 4px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.ops-payment-amount-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* =========================================
+   SHOW PAGE — STATUS DESC
+========================================= */
+
+.ops-status-desc {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   SHOW PAGE — HARGA BREAKDOWN GENERIC
+========================================= */
+
+.ops-harga-breakdown {
+    display: grid;
+    gap: 12px;
+}
+
+.ops-harga-breakdown-2 { grid-template-columns: 1fr 1fr; }
+.ops-harga-breakdown-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.ops-harga-item {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.ops-harga-item-total {
+    background: #6366f1;
+}
+
+.ops-harga-item-label {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.ops-harga-item-total .ops-harga-item-label {
+    color: #c7d2fe;
+}
+
+.ops-harga-item-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.ops-harga-item-value-total {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.status-icon-booked { background: #dbeafe; color: #2563eb; }
+.status-icon-done   { background: #dcfce7; color: #16a34a; }
+.status-icon-pending { background: #fef3c7; color: #d97706; }
+.status-icon-cancelled { background: #fee2e2; color: #dc2626; }
+
+/* Status icon base */
+.status-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px auto;
+    font-size: 26px;
+}
+
+/* Status badge tambahan */
+.ops-status-badge.status-cancelled { background: #fee2e2; color: #dc2626; }
+
+/* Button warna */
+.ops-btn-aksi-full.btn-complete  { background: #22c55e; color: white; }
+.ops-btn-aksi-full.btn-detail    { background: #6366f1; color: white; }
+.ops-btn-aksi-full.btn-cancel-booking { background: #fee2e2; color: #dc2626; }
+
+.ops-btn-aksi-full.btn-complete:hover      { background: #16a34a; }
+.ops-btn-aksi-full.btn-detail:hover        { background: #4f46e5; }
+.ops-btn-aksi-full.btn-cancel-booking:hover { background: #fecaca; }
+
+/* =========================================
+   PASSWORD WRAPPER
+========================================= */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .ops-input {
+    padding-right: 40px;
+}
+
+.password-wrapper .btn-toggle-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 0 12px;
+    z-index: 10;
+}
+
+.password-wrapper .btn-toggle-password:hover {
+    color: #f8fafc;
+}
+
+/* =========================================
+   TABS — KELOLA HARGA
+========================================= */
+
+.ops-tabs {
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.ops-tabs .nav-link {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s;
+}
+
+.ops-tabs .nav-link:hover {
+    color: #6366f1;
+    border-bottom-color: #c7d2fe;
+}
+
+.ops-tabs .nav-link.active {
+    color: #6366f1;
+    border-bottom: 2px solid #6366f1;
+    background: transparent;
+}
+
+/* =========================================
+   PENDAPATAN HARI INI
+========================================= */
+
+.pendapatan-hari-ini {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border: 1px solid #6366f1;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+.pendapatan-label {
+    font-size: 11px;
+    color: #818cf8;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.pendapatan-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f8fafc;
+}

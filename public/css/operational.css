@@ -1,0 +1,166 @@
+/* logo */
+.sidebar-brand-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+/* Hari, tanggal dan waktu */
+#datetime {
+    color: #818CF8 ;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* Sidebar */
+.sidebar {
+    background: linear-gradient(180deg, #0f172a, #1e293b) !important;
+}
+
+.sidebar .nav-item .nav-link {
+    color: #cbd5e1 !important;
+}
+
+.sidebar .nav-item .nav-link span {
+    color: #cbd5e1 !important;
+}
+
+.sidebar .nav-item .nav-link:hover {
+    color: #f8fafc !important;
+    background: rgba(99, 102, 241, 0.1) !important;
+    border-radius: 8px;
+}
+
+.sidebar .nav-item.active .nav-link {
+    background: rgba(99, 102, 241, 0.2) !important;
+    border-left: 3px solid #6366f1;
+    border-radius: 8px;
+}
+
+.sidebar .nav-item.active .nav-link span,
+.sidebar .nav-item.active .nav-link i {
+    color: #f8fafc !important;
+}
+
+.sidebar-brand {
+    background: rgba(99, 102, 241, 0.2) !important;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.sidebar-brand-text {
+    color: #f8fafc !important;
+}
+
+.sidebar-heading {
+    color: #94a3b8 !important;
+}
+
+hr.sidebar-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Topbar */
+.topbar {
+    background: #0f172a !important;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.topbar .nav-link {
+    color: #cbe1d8 !important;
+}
+
+.topbar .nav-link:hover {
+    color: #f8fcf9 !important;
+}
+
+/* Dropdown topbar */
+.dropdown-menu {
+    background: #1e293b !important;
+    border: 1px solid rgba(99, 102, 241, 0.2) !important;
+}
+
+.dropdown-item {
+    color: #cbd5e1 !important;
+}
+
+.dropdown-item:hover {
+    background: rgba(99, 102, 241, 0.15) !important;
+    color: #f8fafc !important;
+}
+
+/* Content area */
+#content-wrapper {
+    background: #f8fafc !important;
+}
+
+/* Footer */
+.sticky-footer {
+    background: #f8fafc !important;
+    border-top: 1px solid #eef2f7;
+}
+
+/* Badge role */
+.badge-primary {
+    background: #6366f1 !important;
+}
+
+/* Toggle sidebar button */
+#sidebarToggle {
+    background: rgba(99, 102, 241, 0.2) !important;
+}
+
+#sidebarToggle:hover {
+    background: rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Content area subtle background */
+#content-wrapper {
+    background: #eef2f7 !important;
+}
+
+.container-fluid {
+    background: #eef2f7;
+}
+
+/* Alert Bottom Left - Login Success */
+.alert-bottom-left {
+    position: fixed;
+    bottom: 30px;
+    left: -300px;
+    background: #22c55e;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999;
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+    transition: left 0.5s ease, opacity 0.5s ease;
+}
+
+
+/* Logout Button di Dropdown */
+.btn-logout-confirm {
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    color: #cbd5e1;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s ease;
+}
+
+.btn-logout-confirm:hover {
+    background-color: rgba(99, 102, 241, 0.15);
+    color: #6366f1;
+}

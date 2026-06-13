@@ -1,0 +1,26 @@
+/* ===========================================
+   data-booking.css — XPLAY Games
+   Class spesifik untuk halaman Booking
+   Class generic → gunakan ops.css
+=========================================== */
+
+/* Harga Box */
+.booking-harga-box {
+    background: #6366f1;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.booking-harga-label {
+    font-size: 11px;
+    color: #c7d2fe;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.booking-harga-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}

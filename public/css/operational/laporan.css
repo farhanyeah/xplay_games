@@ -1,0 +1,70 @@
+.laporan-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.laporan-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.laporan-field {
+    margin-bottom: 15px;
+}
+
+.laporan-field label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.laporan-field .form-control {
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+.laporan-field .form-control[readonly] {
+    background-color: #e9ecef;
+    font-weight: 600;
+    color: #212529;
+}
+
+.laporan-pendapatan-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.laporan-pendapatan-box .label {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.laporan-pendapatan-box .value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.pengeluaran-box {
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.pengeluaran-box label {
+    color: #c53030;
+}

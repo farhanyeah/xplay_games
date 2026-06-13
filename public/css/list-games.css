@@ -1,0 +1,413 @@
+/* =========================================
+   HALAMAN LIST GAMES
+========================================= */
+
+/* =========================================
+   PAGE
+========================================= */
+
+.list-game-page {
+    padding: 160px 0 100px;
+    background: linear-gradient(to bottom, #cbd5e1, #e2e8f0, #f1f5f9);
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.section-label p {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #6366f1;
+}
+
+.section-label span {
+    width: 40px;
+    height: 3px;
+    background-color: #6366f1;
+    border-radius: 20px;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.game-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.center-label {
+    justify-content: center;
+}
+
+.game-title h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 22px;
+    color: #0f172a;
+}
+
+.game-title p {
+    max-width: 760px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #64748b;
+}
+
+/* =========================================
+   WRAPPER
+========================================= */
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* =========================================
+   GAME CARD
+========================================= */
+
+.game-card {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+.game-card h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   GAME LIST WRAPPER (Scroll Hint)
+========================================= */
+
+.game-list-wrapper {
+    position: relative;
+}
+
+.game-list-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 8px;
+    height: 48px;
+    background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.8));
+    border-radius: 0 0 12px 12px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* =========================================
+   GAME LIST (Scroll Area)
+========================================= */
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 8px;
+    align-content: start;
+}
+
+/* =========================================
+   CUSTOM SCROLLBAR
+========================================= */
+
+.game-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.game-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+}
+
+.game-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+}
+
+.game-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/* =========================================
+   GAME ITEM
+========================================= */
+
+.game-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    min-width: 0;
+}
+
+.game-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   GAME IMAGE
+========================================= */
+
+.game-item img {
+    width: 100%;
+    height: 40px;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+}
+
+.game-item:hover img {
+    transform: scale(1.04);
+    transition: transform 0.25s ease;
+}
+
+/* =========================================
+   GAME NAME
+========================================= */
+
+.game-item p {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.4;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET 768px - 992px
+========================================= */
+
+@media screen and (max-width: 992px) {
+
+    .list-game-page {
+        padding: 150px 0 90px;
+    }
+
+    .game-title {
+        margin-bottom: 55px;
+    }
+
+    .game-title h1 {
+        font-size: 52px;
+    }
+
+    .game-title p {
+        font-size: 17px;
+        max-width: 680px;
+    }
+
+    .game-wrapper {
+        gap: 28px;
+    }
+
+    .game-card {
+        padding: 32px;
+        border-radius: 26px;
+    }
+
+    .game-card h2 {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .game-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    .game-item {
+        padding: 10px;
+        gap: 8px;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE 480px - 767px
+========================================= */
+
+@media screen and (max-width: 767px) {
+
+    .list-game-page {
+        padding: 130px 0 70px;
+    }
+
+    .game-title {
+        margin-bottom: 42px;
+    }
+
+    .game-title h1 {
+        font-size: 40px;
+        margin-bottom: 18px;
+    }
+
+    .game-title p {
+        font-size: 15px;
+        line-height: 1.8;
+        max-width: 100%;
+    }
+
+    /* Section Label */
+    .section-label {
+        margin-bottom: 16px;
+    }
+
+    .section-label p {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .section-label span {
+        width: 30px;
+    }
+
+    .game-wrapper {
+        gap: 24px;
+    }
+
+    .game-card {
+        padding: 24px;
+        border-radius: 22px;
+    }
+
+    .game-card h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .game-list {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 100px;
+        gap: 12px;
+        padding-right: 6px;
+    }
+
+    .game-item {
+        padding: 10px;
+        gap: 8px;
+        border-radius: 12px;
+    }
+
+    .game-item p {
+        font-size: 12px;
+    }
+
+    .game-list-wrapper::after {
+        right: 6px;
+        height: 40px;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE - SMALL MOBILE < 480px
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+    .list-game-page {
+        padding: 120px 0 60px;
+    }
+
+    .game-title {
+        margin-bottom: 36px;
+    }
+
+    .game-title h1 {
+        font-size: 32px;
+    }
+
+    .game-title p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Section Label */
+    .section-label p {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .section-label span {
+        width: 24px;
+    }
+
+    .game-wrapper {
+        gap: 20px;
+    }
+
+    .game-card {
+        padding: 20px 14px;
+        border-radius: 20px;
+    }
+
+    .game-card h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .game-list {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: 100px;
+        gap: 10px;
+        padding-right: 5px;
+    }
+
+    .game-item {
+        padding: 8px;
+        gap: 6px;
+        border-radius: 10px;
+    }
+
+    .game-item img {
+        height: 35px;
+    }
+
+    .game-item p {
+        font-size: 11px;
+    }
+
+    .game-list-wrapper::after {
+        right: 5px;
+        height: 36px;
+    }
+
+}

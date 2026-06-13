@@ -1,0 +1,169 @@
+/* =========================================
+   TABLE CONTENT — SPESIFIK SEWA
+========================================= */
+
+.durasi_paket {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.custom-label {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   AKSI BUTTON — SPESIFIK SEWA
+========================================= */
+
+.btn-tambah-durasi {
+    background: #f59e0b;
+    color: white;
+}
+
+.btn-tambah-durasi:hover {
+    background: #d97706;
+    color: white;
+}
+
+.btn-complete {
+    background: #22c55e;
+    color: white;
+}
+
+.btn-cancel-sewa {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.btn-cancel-sewa:hover {
+    background: #fecaca;
+}
+
+
+/* =========================================
+   SHOW PAGE — HARGA BREAKDOWN
+========================================= */
+
+.harga-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.harga-item {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.harga-item-total {
+    background: #6366f1;
+}
+
+.harga-item-label {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.harga-item-total .harga-item-label {
+    color: #c7d2fe;
+}
+
+.harga-item-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.harga-item-value-total {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   SHOW PAGE — STATUS ICON
+========================================= */
+
+.status-icon-pending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.status-icon-disewa {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.status-icon-extended {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.status-icon-completed {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status-icon-cancelled {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+
+/* =========================================
+   SHOW PAGE — FORM AKSI
+========================================= */
+
+.filter-label-hint {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.jaminan-hint {
+    color: #94a3b8;
+    font-size: 11px;
+    margin-top: 4px;
+    display: block;
+}
+
+
+/* =========================================
+   SHOW PAGE — KONFIRMASI PEMBAYARAN
+========================================= */
+
+.info-payment-desc {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.payment-amount-box {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.payment-amount-label {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.payment-amount-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+}

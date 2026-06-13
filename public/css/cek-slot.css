@@ -1,0 +1,354 @@
+/* =========================================
+   CEK SLOT SECTION
+========================================= */
+
+.cek-slot-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #0f172a 100%);
+    min-height: 100vh;
+    padding: 120px 0 70px;
+}
+
+.cek-slot-section::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6366f1, #818cf8, transparent);
+    margin-bottom: 70px;
+}
+
+.cek-slot-section::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6366f1, #818cf8, transparent);
+    margin-top: 70px;
+}
+
+/* Title */
+.cek-slot-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cek-slot-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
+
+.cek-slot-title p {
+    font-size: 16px;
+    color: #94a3b8;
+}
+
+/* Floor Title */
+.cek-slot-floor-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cek-slot-floor-title i {
+    color: #6366f1;
+}
+
+/* Grid */
+.billing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Unit Card */
+.billing-unit-card {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: 0.3s ease;
+}
+
+.billing-unit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Status Colors */
+.billing-status-empty {
+    border-left: 4px solid #22c55e;
+}
+
+.billing-status-paused {
+    border-left: 4px solid #f59e0b;
+}
+
+.billing-status-hold {
+    border-left: 4px solid #6366f1;
+}
+
+.billing-status-green {
+    border-left: 4px solid #22c55e;
+}
+
+.billing-status-yellow {
+    border-left: 4px solid #f59e0b;
+}
+
+.billing-status-red {
+    border-left: 4px solid #ef4444;
+}
+
+/* Card Top */
+.billing-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.billing-unit-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.billing-unit-type {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+/* Badge */
+.billing-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.badge-empty {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.badge-active {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+}
+
+.badge-paused {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+}
+
+.badge-hold {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+}
+
+/* Empty Box */
+.billing-empty-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    gap: 10px;
+}
+
+.billing-empty-box i {
+    font-size: 28px;
+    color: #334155;
+}
+
+.billing-empty-box p {
+    font-size: 13px;
+    color: #475569;
+    margin: 0;
+}
+
+/* Time Box */
+.billing-time-box {
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.billing-time-box.paused {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.billing-time-box.hold {
+    background: rgba(148, 163, 184, 0.06);
+    border-color: rgba(148, 163, 184, 0.15);
+}
+
+.billing-time-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Countdown */
+.billing-countdown {
+    font-size: 28px;
+    font-weight: 800;
+    color: #818cf8;
+    font-family: monospace;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.billing-time-value {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Finish Time */
+.billing-finish-time {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+.billing-finish-next-day {
+    color: #f59e0b;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* =====================
+   TOAST NOTIFICATION
+===================== */
+
+.cek-slot-toast {
+    position: fixed;
+    bottom: 30px;
+    right: -400px;
+    width: 320px;
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: right 0.4s ease;
+    z-index: 99999;
+}
+
+.cek-slot-toast.show {
+    right: 30px;
+}
+
+.cek-slot-toast + .cek-slot-toast {
+    bottom: 110px;
+}
+
+.cek-slot-toast-warning {
+    border-left: 4px solid #f59e0b;
+}
+
+.cek-slot-toast-ended {
+    border-left: 4px solid #ef4444;
+}
+
+.cek-slot-toast-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.cek-slot-toast-warning .cek-slot-toast-icon {
+    color: #f59e0b;
+}
+
+.cek-slot-toast-ended .cek-slot-toast-icon {
+    color: #ef4444;
+}
+
+.cek-slot-toast-body {
+    flex: 1;
+}
+
+.cek-slot-toast-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 4px;
+}
+
+.cek-slot-toast-msg {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.cek-slot-toast-close {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.cek-slot-toast-close:hover {
+    color: #f8fafc;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 992px) {
+    .billing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cek-slot-section {
+        padding: 100px 0 50px;
+    }
+
+    .cek-slot-title h2 {
+        font-size: 28px;
+    }
+
+    .billing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .billing-countdown {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .billing-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
